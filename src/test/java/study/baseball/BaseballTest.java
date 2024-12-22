@@ -28,4 +28,15 @@ public class BaseballTest {
             new Baseball(List.of(1, 2, 3, 4));
         });
     }
+
+    @Test
+    public void isDuplicate() throws IllegalAccessException {
+        Baseball baseball = new Baseball(List.of(1,2,3));
+        assertFalse(baseball.isDuplicate());
+
+        assertThrows(IllegalAccessException.class, () -> {
+            new Baseball(List.of(1,2,2));
+        });
+
+    }
 }
